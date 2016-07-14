@@ -1,6 +1,8 @@
 FROM openshift3/ruby-20-rhel7
+
 USER default
-EXPOSE 4567
+EXPOSE 8080
 COPY . /opt/app-root/src/
-RUN "bundle install"
-CMD "/opt/app-root/src/run.sh"
+
+RUN scl enable ruby200 "bundle install"
+CMD ["scl", "enable", "ruby200", "./run.sh"]
