@@ -9,4 +9,4 @@ RUN scl enable ruby200 "bundle install"
 #RUN chmod +x /opt/app-root/src/run.sh
 
 #USER default
-CMD ["scl", "enable", "ruby200", "./run.sh"]
+CMD /opt/app-root/src/run.sh
